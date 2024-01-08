@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Management Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Real Estate Management Services</h1>
+</header>
+
+<section>
+    <h2>Property Listings</h2>
+
+    <label for="location">Choose Location:</label>
+    <select id="location" onchange="showProperties()">
+        <option value="shomolu">Shomolu</option>
+        <option value="bariga">Bariga</option>
+        <option value="onipanu">Onipanu</option>
+        <option value="yaba">Yaba</option>
+        <option value="gbagada">Gbagada</option>
+        <option value="pedro">Pedro</option>
+    </select>
+
+    <div id="propertyList">
+        <!-- Property listings will be displayed here based on user's location selection -->
+    </div>
+
+    <div id="uploadProperty">
+        <h3>Upload New Property</h3>
+        <form id="propertyForm" onsubmit="submitPropertyForm(event)">
+            <label for="propertyName">Property Name:</label>
+            <input type="text" id="propertyName" name="propertyName" required>
+
+            <label for="propertyType">Property Type:</label>
+            <select id="propertyType" name="propertyType" required>
+                <option value="rent">For Rent</option>
+                <option value="sale">For Sale</option>
+            </select>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <button type="submit">Upload Property</button>
+        </form>
+    </div>
+</section>
+
+<section>
+    <h2>Live Chat</h2>
+    <button id="liveChatButton" onclick="openChat()">Live Chat</button>
+</section>
+
+<footer>
+    <p>&copy; 2024 Real Estate Management Services. All rights reserved.</p>
+</footer>
+
+<script>
+    function showProperties() {
+        // Add logic to fetch and display properties based on the selected location
+    }
+
+    function submitPropertyForm(event) {
+        event.preventDefault(); // Prevents the default form submission
+
+        // Validate form inputs
+        if (validatePropertyForm()) {
+            // If validation is successful, proceed with form submission
+            uploadProperty();
+        }
+    }
+
+    function validatePropertyForm() {
+        // Basic client-side validation
+        const propertyName = document.getElementById("propertyName").value;
+        const propertyType = document.getElementById("propertyType").value;
+        const price = document.getElementById("price").value;
+
+        if (!propertyName || !propertyType || !price) {
+            alert("Please fill in all the required fields.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function uploadProperty() {
+        // Add logic to handle property upload on the server side
+        alert("Property uploaded successfully!");
+    }
+
+    function openChat() {
+        // Add logic to open a live chat window
+        alert("Opening Live Chat");
+    }
+</script>
+
+</body>
+</html>
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+select, input, button {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #666;
+}
