@@ -1,0 +1,114 @@
+<!-- artisans_service.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Services</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Artisan Services</h1>
+    </header>
+
+    <section id="picture-gallery">
+        <h2>Picture Gallery</h2>
+        <div class="gallery">
+            <!-- Placeholder for dynamic images -->
+            <img src="/static/images/placeholder.jpg" alt="Artisan Work">
+        </div>
+    </section>
+
+    <section id="video-upload">
+        <h2>Video Upload</h2>
+        <form action="/upload_video" method="POST" enctype="multipart/form-data">
+            <input type="file" name="video" accept="video/*">
+            <button type="submit">Upload Video</button>
+        </form>
+    </section>
+
+    <section id="live-chat">
+        <h2>Live Chat</h2>
+        <div id="chat-messages">
+            <!-- Placeholder for dynamic chat messages -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="message-input" placeholder="Type your message">
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+}
+
+#video-upload form {
+    margin-top: 10px;
+}
+
+#live-chat {
+    max-width: 600px;
+    margin: auto;
+}
+
+#chat-messages {
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#chat-form {
+    margin-top: 10px;
+    display: flex;
+}
+
+#message-input {
+    flex: 1;
+    padding: 5px;
+}
+
+#chat-form button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
